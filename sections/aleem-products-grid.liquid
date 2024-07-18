@@ -49,7 +49,7 @@
         <div data-product="{{ product.handle }}">
           <a href="#" class="product-grid__link">
             <img
-              src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'thumb' }}"
+              src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
               alt="{{ product.title }}"
               width="100"
               height="100"
