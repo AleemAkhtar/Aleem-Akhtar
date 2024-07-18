@@ -44,7 +44,7 @@
       {% assign product_id = 'product_' | append: i %}
       {% assign product = section.settings[product_id] %}
       {% if product %}
-        <p>{{ product.featured_image }}</p>
+        <p>{{ file_img_url }}</p>
         {% assign product = all_products[product] %}
         <div data-product="{{ product.handle }}">
           <a href="#" class="product-grid__link">
