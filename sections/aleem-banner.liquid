@@ -25,6 +25,17 @@
             "id": "button_url_top",
             "label": "Button URL Top",
             "default": "/"
+        },
+        {
+            "type":"image_picker",
+            "id": "top_banner_img",
+            "label": "Top Banner Image"
+        },
+        {
+            "type":"text",
+            "id": "top_banner_img_alt",
+            "label": "Top Banner Image Alt",
+            "default": "Top Banner"
         }
     ],
     "presets": [
@@ -42,6 +53,7 @@
         <p>{{section.settings.logo_tagline}}</p>
         <a href="{{section.settings.button_url_top}}">{{section.settings.button_text_top}}</a>
     </div>
+  <img src="{{ section.settings.top_banner_img | image_url: 'master' }}" alt="{{ section.settings.top_banner_img_alt }}" width="100" height="100" />
 </section>
 
 <style>
