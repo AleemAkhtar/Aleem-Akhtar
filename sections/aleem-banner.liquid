@@ -56,7 +56,7 @@
   {% comment %}
   <img src="{{ section.settings.top_banner_img | image_url: 'master' }}" alt="{{ section.settings.top_banner_img_alt }}" width="100" height="100" />
   {% endcomment %}
-  {{ 'top-banner-img.png' | asset_img_url | image_tag:'Top Banner' }}
+  <img src="{{ 'top-banner-img.png' | asset_img_url | image_tag:'Top Banner' }}" width="100" height="100"/>
 </section>
 
 <style>
