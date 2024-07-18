@@ -61,14 +61,13 @@
 {% endschema %}
 
 <section class="aleem-banner">
-    <div class="aleem-banner__content">
+  <div class="container">
+    <div>
         <a href="#">{{ section.settings.logo_headline}}</a>
         <p>{{section.settings.logo_tagline}}</p>
         <a href="{{section.settings.button_url_top}}">{{section.settings.button_text_top}}</a>
     </div>
-  {% comment %}
-  <img src="{{ section.settings.top_banner_img | image_url: 'master' }}" alt="{{ section.settings.top_banner_img_alt }}" width="100" height="100" />
-  {% endcomment %}
+  </div>
   <img src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}" width="100%" height="100%"/>
   <div class="aleem-banner__content">
     <div>
