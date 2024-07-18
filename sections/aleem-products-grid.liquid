@@ -38,22 +38,24 @@
 {% endschema %}
 
 <section>
-  <div>
+  <div class="row">
     <p>Tisso vison in the Wild</p>
     {% for i in (1..6) %}
       {% assign product_id = 'product_' | append: i %}
       {% assign product = section.settings[product_id] %}
       {% if product %}
         {% assign product = all_products[product] %}
-        <div data-product="{{ product.handle }}">
-          <a href="#" class="product-grid__link">
-            <img
-              src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
-              alt="{{ product.title }}"
-              width="100"
-              height="100"
-            >
-          </a>
+        <div class="col-6 col-md-4">
+          <div data-product="{{ product.handle }}">
+            <a href="#" class="product-grid__link">
+              <img
+                src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
+                alt="{{ product.title }}"
+                width="100"
+                height="100"
+              >
+            </a>
+          </div>
         </div>
       {% endif %}
     {% endfor %}
