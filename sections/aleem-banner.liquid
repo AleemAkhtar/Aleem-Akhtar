@@ -1,1 +1,31 @@
-<h4>Aleem Banner Test </h4>
+{% schema %}
+{
+    "name": "Aleem Banner",
+    "settings": [
+        {
+            "type":"text",
+            "id": "logo_headline",
+            "label": "Logo Headline",
+            "default": "TISSO VISON"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Aleem Banner",
+            "category": "Customer Banner"
+        }
+    ]
+}
+{% endschema %}
+
+<section class="aleem-banner">
+    <div class="aleem-banner__content">
+        <a href="#">{{ section.settings.logo_headline}}</a>
+    </div>
+</div>
+
+<style>
+.aleem-banner{
+    background: #F5F5F5;
+}
+</style>
