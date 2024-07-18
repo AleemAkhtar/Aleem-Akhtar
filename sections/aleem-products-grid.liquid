@@ -1,6 +1,60 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Aleem Products Grid",
+  "settings": [
+    {
+    "type": "product",
+    "id" : "product_1",
+    "label" : "Product 1"
+    },{
+    "type": "product",
+    "id" : "product_2",
+    "label" : "Product 2"
+    },{
+    "type": "product",
+    "id" : "product_3",
+    "label" : "Product 3"
+    },{
+    "type": "product",
+    "id" : "product_4",
+    "label" : "Product 4"
+    },{
+    "type": "product",
+    "id" : "product_5",
+    "label" : "Product 5"
+    },{
+    "type": "product",
+    "id" : "product_6",
+    "label" : "Product 6"
+    },
+  ],
+  "presets": [
+    {
+    "name" : "Aleem Products Grid",
+    "category" : "Custom Products Grid"
+    }
+  ]
+}
 {% endschema %}
+
+<section>
+  <div>
+    {% for i in (1..6) %}
+      {% capture product_id %}product_{{ i }} {% endcapture %}
+      {% assign product = section.settings[product_id] %}
+      {% if product %}
+        {% assign product = all_products[product] %}
+        <div data-product="{{ product.handle }}">
+          <a href="#" class="product-grid__link">
+            <img
+              src="{{ product.featured_image | image_url: 'small' }}"
+              alt="{{ product.title }}"
+              width="100%"
+              height="100%"
+            >
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
