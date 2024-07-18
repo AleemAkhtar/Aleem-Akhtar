@@ -41,7 +41,7 @@
   <div>
     <p>Tisso vison in the Wild</p>
     {% for prodd in collection.products %}
-      {{ prodd.name }}
+      {{ prodd.title }}
     {% endfor %}
     {% for i in (1..6) %}
       {% assign product_id = 'product_' | append: i %}
