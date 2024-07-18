@@ -146,8 +146,21 @@
           "logo_tagline": "Find the ideal gift for your loved ones.",
           "button_text_top": "CHOOSE GIFT",
           "button_url_top": "\/",
-          "top_banner_img": "shopify:\/\/shop_images\/top-banner-img.png",
-          "top_banner_img_alt": "Top Banner"
+          "main_headline": "THE GIFT GUIDE",
+          "main_tagline": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
+          "button_text_bottom": "SHOP NOW",
+          "button_url_bottom": "\/"
+        }
+      },
+      "aleem-products-grid": {
+        "type": "aleem-products-grid",
+        "settings": {
+          "product_1": "black-leather-bag",
+          "product_2": "blue-silk-tuxedo",
+          "product_3": "chequered-red-shirt",
+          "product_4": "classic-leather-jacket",
+          "product_5": "classic-varsity-top",
+          "product_6": "dark-denim-top"
         }
       }
     },
