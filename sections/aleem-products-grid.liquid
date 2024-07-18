@@ -40,7 +40,7 @@
 <section>
   <div>
     <p>Tisso vison in the Wild</p>
-    {% for prodd in collection.products %}
+    {% for prodd in all_products %}
       {{ prodd.title }}
     {% endfor %}
     {% for i in (1..6) %}
