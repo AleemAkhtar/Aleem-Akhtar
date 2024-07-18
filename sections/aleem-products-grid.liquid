@@ -44,12 +44,12 @@
       {% assign product_id = 'product_' | append: i %}
       {% assign product = section.settings[product_id] %}
       {% if product %}
-        <p>{{ product.images.first.id }}</p>
+        <p>{{ product.media.first.preview_image }}</p>
         {% assign product = all_products[product] %}
         <div data-product="{{ product.handle }}">
           <a href="#" class="product-grid__link">
             <img
-              src="{{ 'black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg' | file_img_url:'thumb' }}"
+              src="{{  'black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg' | file_img_url:'thumb' }}"
               alt="{{ product.title }}"
               width="100"
               height="100"
