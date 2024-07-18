@@ -27,15 +27,28 @@
             "default": "/"
         },
         {
-            "type":"image_picker",
-            "id": "top_banner_img",
-            "label": "Top Banner Image"
+            "type":"text",
+            "id": "main_headline",
+            "label": "Main Headline",
+            "default": "THE GIFT GUIDE"
         },
         {
             "type":"text",
-            "id": "top_banner_img_alt",
-            "label": "Top Banner Image Alt",
-            "default": "Top Banner"
+            "id": "main_tagline",
+            "label": "Main Tagline",
+            "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+        },
+        {
+            "type":"text",
+            "id": "button_text_bottom",
+            "label": "Button Text Bottom",
+            "default": "SHOP NOW"
+        },
+        {
+            "type":"url",
+            "id": "button_url_bottom",
+            "label": "Button URL Bottom",
+            "default": "/"
         }
     ],
     "presets": [
@@ -57,6 +70,14 @@
   <img src="{{ section.settings.top_banner_img | image_url: 'master' }}" alt="{{ section.settings.top_banner_img_alt }}" width="100" height="100" />
   {% endcomment %}
   <img src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}" width="100" height="100"/>
+  <div class="aleem-banner__content">
+    <div>
+        <a href="#">{{ section.settings.main_headline}}</a>
+        <p>{{section.settings.main_tagline}}</p>
+        <a href="{{section.settings.button_url_bottom}}">{{section.settings.button_text_bottom}}</a>
+    </div>
+    <img src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}" width="100" height="100"/>
+  </div>
 </section>
 
 <style>
