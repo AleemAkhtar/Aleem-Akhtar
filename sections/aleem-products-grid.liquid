@@ -42,7 +42,8 @@
     <p>Tisso vison in the Wild</p>
     {% for i in (1..6) %}
       {% capture product_id %}product_{{ i }} {% endcapture %}
-      {% assign product = section.settings[product_id] %}
+      {% assign products_id = 'product_' | append: i %}
+      {% assign product = section.settings[products_id] %}
       {% if product %}
         {{ section.settings.product_1 }}
         {% assign product = all_products[product] %}
