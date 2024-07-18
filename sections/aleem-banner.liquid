@@ -69,14 +69,14 @@
   {% comment %}
   <img src="{{ section.settings.top_banner_img | image_url: 'master' }}" alt="{{ section.settings.top_banner_img_alt }}" width="100" height="100" />
   {% endcomment %}
-  <img src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}" width="100" height="100"/>
+  <img src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}" width="100%" height="100%"/>
   <div class="aleem-banner__content">
     <div>
         <a href="#">{{ section.settings.main_headline}}</a>
         <p>{{section.settings.main_tagline}}</p>
         <a href="{{section.settings.button_url_bottom}}">{{section.settings.button_text_bottom}}</a>
     </div>
-    <img src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}" width="100" height="100"/>
+    <img src="{{ 'bottom-banner-img.png' | asset_url | image_tag:'Bottom Banner' }}" width="100%" height="100%"/>
   </div>
 </section>
 
