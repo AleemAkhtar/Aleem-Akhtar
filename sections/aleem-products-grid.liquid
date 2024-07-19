@@ -1,0 +1,215 @@
+{% schema %}
+    {
+      "name": "Aleem Products Grid",
+      "settings": [
+        {
+        "type": "product",
+        "id" : "product_1",
+        "label" : "Product 1"
+        },{
+        "type": "product",
+        "id" : "product_2",
+        "label" : "Product 2"
+        },{
+        "type": "product",
+        "id" : "product_3",
+        "label" : "Product 3"
+        },{
+        "type": "product",
+        "id" : "product_4",
+        "label" : "Product 4"
+        },{
+        "type": "product",
+        "id" : "product_5",
+        "label" : "Product 5"
+        },{
+        "type": "product",
+        "id" : "product_6",
+        "label" : "Product 6"
+        }
+      ],
+      "presets": [
+        {
+        "name" : "Aleem Products Grid",
+        "category" : "Custom Products Grid"
+        }
+      ]
+    }
+    {% endschema %}
+    
+    <section class="section2 mt-5">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <div class="col-12">
+            <h2>Tisso vison in the wild</h2>
+          </div>
+        </div>
+    
+        <div class="row">
+          {% for i in (1..6) %}
+            {% assign product_id = 'product_' | append: i %}
+            {% assign product = section.settings[product_id] %}
+            {% if product %}
+              {% assign product = all_products[product] %}
+              <div class="col-6 col-md-4 p-2">
+                <div class="product-item pos-rel product-grid__item" data-product-handle="{{ product.handle }}">
+                  <a href="#" class="product-grid__link">
+                    <img
+                      src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
+                      alt="{{ product.title }}"
+                      width="100%"
+                      height="100%"
+                    >
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div id="product-popup" style="display:none">
+          <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2 id="product-title"></h2>
+            <p id="selected-variant-id"></p>
+            <button id="popup-add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    {% comment %}
+      START OF POP-UP DESIGN
+    {% endcomment %}
+    
+    <style>
+      #product-popup{
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color:rgba(0,0,0,0.4);
+        display:flex;
+        z-index:1;
+        overflow: auto;
+      }
+      .popup-content{
+        background: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 30%;
+        max-width: 450px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .close-popup {
+        position: absolute;
+        top:10px;
+        right:10px;
+        cursor:pointer;
+      }
+    </style>
+    
+    {% comment %}
+      START OF SCRIPT
+    {% endcomment %}
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var product_links = document.querySelectorAll('.product-grid__link');
+        var popup = document.getElementById('product-popup');
+        var close_popup = document.querySelector('.close-popup');
+        var add_to_cart = document.getElementById('popup-add-to-cart');
+    
+        product_links.forEach(function(link){
+          link.addEventListener('click', function(e){
+            e.preventDefault();
+            var product_handle = this.closest('.product-grid__item').dataset.productHandle;
+            //console.log('/products/' + product_handle+ '.js');
+            fetch('/products/' + product_handle + '.js')
+              .then(response => {
+                if (response.ok) {
+                  return response.json();
+                }
+              })
+            .then(product => {
+              //console.log(product);
+              document.getElementById('product-title').innerText = product.title;
+              document.getElementById('selected-variant-id').innerText = product.variants[0].id;
+              popup.style.display="block";
+    
+            });
+          });
+        });
+    
+        close_popup.addEventListener('click', function(){
+          popup.style.display = 'none';
+        });
+        popup.addEventListener('click', function(){
+          popup.style.display = 'none';
+        });
+        add_to_cart.addEventListener('click', function() {
+          var variant_id = document.getElementById('selected-variant-id').innerText;
+          fetch('/cart/add.js',{
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify({id: variant_id, quantity:1})
+          }).then(response => {
+                if (response.ok) {
+                  return response.json();
+                }
+              }).then(added_product => {
+              //console.log(added_product);
+              //var added_product = response.items.find(item => item.variant_id== variant_id);
+              //console.log(added_product);
+            if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('XS')){
+              console.log('Soft Winter Jacket To be added here');
+              fetch ('/products.json')
+              .then(response => {
+                if (response.ok) {
+                  return response.json();
+                }
+                else {
+                 console.log('some error occurred.');
+                }
+              }).then(response => {
+                const products = response.products;
+                  //console.log(products);
+                if (products) {
+                  const soft_winter_jacket = products.find(product => product.title == 'Soft Winter Jacket');
+                  if (soft_winter_jacket) {
+                    console.log(soft_winter_jacket);
+                    const medium_black_variant = soft_winter_jacket.variants.find(med => med.option1=='M' && med.option2=='Black')
+                    if (medium_black_variant) {
+                      fetch('/cart/add.js',{
+                        method: 'POST',
+                        headers: {
+                          'Content-type': 'application/json'
+                        },
+                        body: JSON.stringify({id: medium_black_variant.id, quantity:1})
+                      }).then(response => {
+                            if (response.ok) {
+                              console.log('Soft Winter Jacket Added.');
+                            }
+                          });
+                    }
+    
+                  }
+                  else {
+                    console.log('not found');
+                  }
+                }
+              });
+            }
+              popup.style.display="none";
+    
+            });
+    
+        });
+      });
+    </script>
+    
