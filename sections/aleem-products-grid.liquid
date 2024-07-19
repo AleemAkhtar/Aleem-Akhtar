@@ -310,8 +310,7 @@
           tempDiv.innerHTML = product.description;
           document.getElementById('product-description').innerText = tempDiv.innerText;
 
-          variants = document.variants;
-          console.log(variants);
+          variants = product.variants;
           // populating color variants
           var colors = product.options[1].values;
           var ul = document.getElementById('product-colors');
