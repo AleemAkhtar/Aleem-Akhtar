@@ -203,6 +203,14 @@
       popup.style.display = 'none';
     });
 
+    var options = document.getElementById('product-sizes');
+    options.addEventListener('focus', function(){
+      options.classList.add('product-variant-item-open');
+    });
+    options.addEventListener('blur', function(){
+      options.classList.remove('product-variant-item-open');
+    });
+
     add_to_cart.addEventListener('click', function() {
       var selected_size = document.getElementById('product-sizes').value;
       var selected_color = document.getElementsByClassName('selected-color')[0].childNodes[1].innerText;
