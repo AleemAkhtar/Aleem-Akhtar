@@ -2,30 +2,55 @@
   {
     "name": "Aleem Banner",
     "settings": [
-        {
-            "type":"text",
-            "id": "logo_headline",
-            "label": "Logo Headline",
-            "default": "TISSO VISON"
-        },
-        {
-            "type":"text",
-            "id": "logo_tagline",
-            "label": "Logo Tagline",
-            "default": "Find the ideal gift for your loved ones."
-        },
-        {
-            "type":"text",
-            "id": "button_text_top",
-            "label": "Button Text Top",
-            "default": "CHOOSE GIFT"
-        },
-        {
-            "type":"url",
-            "id": "button_url_top",
-            "label": "Button URL Top",
-            "default": "#"
-        }
+      {
+        "type": "text",
+        "id": "logo_headline",
+        "label": "Logo Headline",
+        "default": "TISSO VISON"
+      },
+      {
+        "type": "text",
+        "id": "logo_tagline",
+        "label": "Logo Tagline",
+        "default": "Find the ideal gift for your loved ones."
+      },
+      {
+        "type": "text",
+        "id": "button_text_top",
+        "label": "Button Text Top",
+        "default": "CHOOSE GIFT"
+      },
+      {
+        "type": "url",
+        "id": "button_url_top",
+        "label": "Button URL Top",
+        "default": "/"
+      }, {
+        "type": "text",
+        "id": "main_headline",
+        "label": "Main Headline",
+        "default": "THE GIFT GUIDE"
+      }, {
+        "type": "text",
+        "id": "main_tagline",
+        "label": "Main Tagline",
+        "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+      }, {
+        "type": "text",
+        "id": "button_text_bottom",
+        "label": "Button Text Bottom",
+        "default": "SHOP NOW"
+      }, {
+        "type": "url",
+        "id": "button_url_bottom",
+        "label": "Button URL Bottom",
+        "default": "/"
+      }, {
+        "type": "text",
+        "id": "below_banner_text",
+        "label": "Below Banner Text",
+        "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+      }
     ],
     "presets": [
       {
@@ -36,17 +61,81 @@
   }
 {% endschema %}
 
-<section class="aleem-banner">
-    <div class="aleem-banner__content">
-        <a href="#">{{ section.settings.logo_headline}}</a>
-        <p>{{section.settings.logo_tagline}}</p>
-        {% comment %}
-        <a href="{{section.settings.button_url_top}}">{{section.settings.button_text_top}}</a>
-        {% endcomment %}
+<section class="section1">
+  <div class="top-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-lg-4">
+          <div class="d-flex d-md-inline-block justify-content-center pos-rel">
+            <div class="burger-menu-toggler d-md-none pos-abs">**</div>
+            <span class="logo">{{ section.settings.logo_headline }}</span>
+          </div>
+        </div>
+        <div class="col-md-8 col-lg-8">
+          <div class="burger-menu d-none d-md-block">
+            <div class="row">
+              <div class="col-md-9">{{ section.settings.logo_tagline }}</div>
+              <button class="col-md-3 text-center">
+                {{ section.settings.button_text_top }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="row d-md-block d-none">
+    <div class="col-12">
+      <img
+        src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}"
+        width="100%"
+        height="100%"
+        alt="Top Banner">
+    </div>
+  </div>
+
+  <div class="row pos-rel text-center text-md-start">
+    <div class="col-md-5 offset-md-1 p-md-3 p-xl-5">
+      <h1>{{ section.settings.main_headline }}</h1>
+      <p>{{ section.settings.main_tagline }}</p>
+      <button class="pos-abs shopnow-btn">{{ section.settings.button_text_bottom }}</button>
+    </div>
+    <div class="col-md-6">
+      <img
+        src="{{ 'bottom-banner-img.png' | asset_url | image_tag:'Bottom Banner' }}"
+        width="100%"
+        height="100%"
+        alt="Bottom Banner">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="text-center">{{ section.settings.below_banner_text }}</p>
+      </div>
+    </div>
+  </div>
 </section>
 <style>
-.aleem-banner{
+  .top-banner {
     background: #F5F5F5;
-}
+  }
+
+  @media only screen and (max-width: 767px) {
+    .shopnow-btn {
+      bottom: 0;
+      transform: translatex(-50%);
+    }
+  }
+  .pos-rel {
+    position: relative;
+  }
+  .pos-abs {
+    position: absolute;
+  }
+  .burger-menu-toggler {
+    left: 0;
+  }
 </style>
