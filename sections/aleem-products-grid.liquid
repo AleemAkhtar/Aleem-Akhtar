@@ -68,3 +68,64 @@
     </div>
   </div>
 </section>
+
+{% comment %}
+  START OF POP-UP DESIGN
+{% endcomment %}
+
+<div id="product-popup" style="display:none">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2 id="product-title"></h2>
+  </div>
+</div>
+
+<style>
+  #product-popup{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: #F5F5F5;
+  }
+  #popup-content{
+    background:#FFF;
+    max-width:400px;
+    position: relative;
+  }
+  .close-popup {
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor:pointer;
+  }
+</style>
+
+{% comment %}
+  START OF SCRIPT
+{% endcomment %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var product_links = document.querySelectorAll('.product-grid__link');
+    var popup = document.getElemetById('product-popup');
+    var close_popup = docment.querySelection('.close-popup');
+
+    product_links.forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var product_handle = this.closest('.product_grid__item').dataset.productHandle;
+        fetch('/products/' + product_handle + '.js')
+        .then(product => response.json())
+        .then(product => {
+          document.getElementById('product-title').innerText = product.title;
+        });
+      });
+    });
+
+    close_popup.addEventListner('click', function(){
+      popup.style.display = 'none';
+    });
+  }
+</script>
