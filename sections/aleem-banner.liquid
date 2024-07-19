@@ -126,6 +126,7 @@
     }
 
     .button-yellow {
+      display: inline-block;
       background: yellow;
       background-image: url('/cdn/shop/t/3/assets/button-arrow-black.svg');
       background-repeat: no-repeat;
@@ -134,19 +135,20 @@
       transition: color 1s ease;
       position:relative;
     }
-  .button-yellow::before {
+  .button-yellow::after {
     content: "";
     position:absolute;
     top:0;
-    left:-100%;
+    left:0;
     width: 100%;
     height: 100%;
       background: black;
-      transition: color 1s ease;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s ease;
       z-index: -1;
     }
-  .button-yellow:hover::before {
-    left:0;
+  .button-yellow:hover::after {
+    clip-path: inset(0 0 0 0);
   }
   .button-yellow:hover {
     color: white;
