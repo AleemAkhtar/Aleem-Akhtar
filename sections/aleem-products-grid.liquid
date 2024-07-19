@@ -294,8 +294,20 @@
           document.getElementById('selected-variant-id').innerText = product.variants[0].id;
           var tempDiv = document.createElement('div');
           tempDiv.innerHTML = product.description;
-
           document.getElementById('product-description').innerText = tempDiv.innerText;
+
+          // populating variants
+          var colors = product.options[1].values;
+          var ul = document.getElementById('product-colors');
+          ul.innerHTML = "";
+          colors.forEach(function(color){
+            var li = '<li class="' + color + '">';
+                li += '<input type="checkbox" name="color" style="background-color: '+color+';">';
+                li += '<span>'+color+'</span>';
+                li += '</li>';
+            ul.innerHTML += li;
+          });
+
           popup.style.display="block";
 
         });
