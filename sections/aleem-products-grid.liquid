@@ -74,6 +74,67 @@
         <button id="popup-add-to-cart">Add to cart</button>
       </div>
     </div>
+
+    <!-- pop up design -->
+
+    <div id="product-popup" style="display:none">
+      <div class="product-item-detail popup-content">
+        <span class="close-popup">&times;</span>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="product-img">
+              <img id="product-img" src="" alt="" width="100%" height="100%">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="product-description">
+              <h3 id="product-title"></h3>
+              <h2 id="product-price"></h2>
+              <p id="product-description"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-variants">
+          <div class="product-variant-item mb-3">
+            <h3 class="mb-2">Color</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="color">
+                  <ul id="product-colors">
+                    <li class="white">
+                      <input type="checkbox" name="color" style="background-color: #fff;">
+                      <span>White</span>
+                    </li>
+                    <li class="black">
+                      <input type="checkbox" name="color" style="background-color: #000;">
+                      <span>Black</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-variant-item mb-3">
+            <h3 class="mb-2">Size</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="selection-group pos-rel">
+                  <select name="" id="product-sizes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <span class="border-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="popup-add-to-cart" class="add-to-cart-btn mt-4" type="button">ADD TO CART</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -110,6 +171,106 @@
     right:10px;
     cursor:pointer;
   }
+  .product-item-detail {
+        max-width: 305px;
+      }
+      .close-popup {
+        width: 30px;
+        height: 30px;
+      }
+      .close-popup img {
+        width: 100%;
+        height: 100%;
+      }
+      .product-img {
+        max-height: 140px;
+      }
+      .product-img img {
+        width: 100%;
+        height: 100%;
+      }
+      .product-description h3 {
+        font-family: 'Jost';
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 300;
+      }
+      .product-description h2 {
+        font-family: 'Lustria';
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+      }
+      .product-description p {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 110%;
+        letter-spacing: -0.01em;
+        color: #000000;
+      }
+      .product-variant-item h3 {
+        font-family: 'Jost';
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 400;
+      }
+      .color  ul {
+        padding: 0; margin: 0;
+        column-count: 2;
+        column-gap: 0;
+        list-style-type: none;
+      }
+      .color li {
+        height: 40px;
+        padding: 0px;
+        margin: 0px;
+        border: 1px solid black;
+        font-family: 'Jost';
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: -2%;
+        color: black;
+      }
+
+      .color li input {
+        appearance: none;
+        border-right: 1px solid black;
+        width: 5px;
+        height: 100%;
+        margin-right: 12px;
+      }
+      .color li span {
+        position: relative;
+        top: -14px;
+
+      }
+      .product-variant-item select {
+        background: url('/');
+        background-repeat: no-repeat;
+        height: 40px;
+        border: 1px solid black;
+        width: 100%;
+        appearance: none;
+        position: relative;
+        background-position: right 10px center;
+      }
+      .product-variant-item .border-right {
+        position: absolute;
+        right: 50px;
+        height: 100%;
+        border-right: 1px solid black;
+        content: '';
+      }
+      .add-to-cart-btn {
+        background: black;
+        color: white;
+        border: 1px solid black;
+        text-transform: uppercase;
+        width: 100%;
+        height: 40px;
+      }
 </style>
 
 {% comment %}
@@ -137,6 +298,9 @@
         .then(product => {
           //console.log(product);
           document.getElementById('product-title').innerText = product.title;
+          document.getElementById('product-price').innerText = product.price;
+          document.getElementById('product-description').innerText = product.description;
+          document.getElementById('product-img').src = product.featured_image;
           document.getElementById('selected-variant-id').innerText = product.variants[0].id;
           popup.style.display="block";
 
