@@ -61,6 +61,13 @@
                   height="100%"
                 >
               </a>
+
+              <div id="product-popup" style="display:none">
+                <div class="popup-content">
+                  <span class="close-popup">&times;</span>
+                  <h2 id="product-title"></h2>
+                </div>
+              </div>
             </div>
           </div>
         {% endif %}
@@ -72,13 +79,6 @@
 {% comment %}
   START OF POP-UP DESIGN
 {% endcomment %}
-
-<div id="product-popup" style="display:none">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <h2 id="product-title"></h2>
-  </div>
-</div>
 
 <style>
   #product-popup{
@@ -93,9 +93,15 @@
     overflow: auto;
   }
   .popup-content{
-    background:#fff;
-    max-width:400px;
+    background: #FeFefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    max-width: 600px;
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .close-popup {
     position: absolute;
