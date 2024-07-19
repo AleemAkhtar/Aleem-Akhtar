@@ -135,7 +135,7 @@
             }
           })
         .then(product => {
-          console.log(product);
+          //console.log(product);
           document.getElementById('product-title').innerText = product.title;
           document.getElementById('selected-variant-id').innerText = product.variants[0].id;
           popup.style.display="block";
@@ -163,7 +163,7 @@
               return response.json();
             }
           }).then(added_product => {
-        console.log(added_product);
+          //console.log(added_product);
           //var added_product = response.items.find(item => item.variant_id== variant_id);
           //console.log(added_product);
         if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('XS')){
@@ -178,7 +178,7 @@
             }
           }).then(response => {
             const products = response.products;
-              console.log(products);
+              //console.log(products);
             if (products) {
               const soft_winter_jacket = products.find(product => product.title == 'Soft Winter Jacket');
               if (soft_winter_jacket) {
