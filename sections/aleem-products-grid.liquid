@@ -37,6 +37,34 @@
 }
 {% endschema %}
 
+<section class="section2 mt-5">
+    <div class="container">
+
+      <div class="row text-center text-md-start">
+        <div class="col-12">
+          <h2>Tisso vison in the wild</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        {% for i in (1..6) %}
+      {% assign product_id = 'product_' | append: i %}
+      {% assign product = section.settings[product_id] %}
+      {% if product %}
+        {% assign product = all_products[product] %}
+        <div class="col-6 col-md-4">
+          <div class="product-item pos-rel" data-product="{{ product.handle }}">>
+             <a href="#" class="product-grid__link">
+            <img src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
+                alt="{{ product.title }}"
+                width="100"
+                height="100">
+             </a>
+          </div>
+        </div>
+         {% endif %}
+    {% endfor %}
+      </div>
 <section>
   <div class="row">
     <p>Tisso vison in the Wild</p>
