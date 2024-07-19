@@ -185,7 +185,7 @@
   position: relative;
   background-position: right 16px center;
 }
-.product-variant-item-open {
+.product-variant-item-open select {
   background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
     right 10px center;
 }
