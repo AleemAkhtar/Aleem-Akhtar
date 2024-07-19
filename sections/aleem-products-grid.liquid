@@ -118,8 +118,13 @@
         var product_handle = this.closest('.product-grid__item').dataset.productHandle;
         console.log('/products/' + product_handle+ '.js');
         fetch('/products/' + product_handle + '.js')
-        .then(product => response.json())
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+          })
         .then(product => {
+          console.log(product);
           document.getElementById('product-title').innerText = product.title;
         });
       });
