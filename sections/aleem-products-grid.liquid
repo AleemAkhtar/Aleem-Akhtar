@@ -315,8 +315,8 @@
           ul.childNodes.forEach(function(li){
       li.addEventListener('click', function(e){
         e.preventDefault();
-        li.classList.remove('selected-color');
-        e.classList.add('selected-color');
+          ul.childNodes.forEach((li) => li.classList.remove('selected-color'));
+        this.classList.add('selected-color');
       })
           });
 
@@ -326,7 +326,7 @@
           options.innerHTML = "";
           sizes.forEach(function(size){
             var li = '<option value="'+size+'">'+size+'</option>';
-            ul.innerHTML += li;
+            options.innerHTML += li;
           });
           popup.style.display="block";
 
