@@ -52,7 +52,7 @@
         {% if product %}
           {% assign product = all_products[product] %}
           <div class="col-6 col-md-4 p-2">
-            <div class="product-item pos-rel product-grid__item" data-product="{{ product.handle }}">
+            <div class="product-item pos-rel product-grid__item" data-product-handle="{{ product.handle }}">
               <a href="#" class="product-grid__link">
                 <img
                   src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
