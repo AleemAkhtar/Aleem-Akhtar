@@ -127,6 +127,7 @@
         .then(product => {
           console.log(product);
           document.getElementById('product-title').innerText = product.title;
+          popup.style.display="block";
         });
       });
     });
