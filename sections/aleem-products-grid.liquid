@@ -166,7 +166,7 @@
         console.log(added_product);
           //var added_product = response.items.find(item => item.variant_id== variant_id);
           //console.log(added_product);
-        if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('M')){
+        if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('XS')){
           console.log('Soft Winter Jacket To be added here');
           fetch ('/products.json')
           .then(response => {
