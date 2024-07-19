@@ -75,13 +75,8 @@
           <div class="burger-menu d-none d-md-block">
             <div class="row">
               <div class="col-md-9">{{ section.settings.logo_tagline }}</div>
-              <button class="col-md-3 text-center">
+              <button class="col-md-3 text-center button-yellow">
                 {{ section.settings.button_text_top }}
-                <img
-                  src="{{ 'button-arrow-black.svg' | asset_url | image_tag:'Button Arrow Right' }}"
-                  width="100%"
-                  height="100%"
-                >
               </button>
             </div>
           </div>
@@ -126,23 +121,35 @@
   </div>
 </section>
 <style>
-  .top-banner {
-    background: #F5F5F5;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .shopnow-btn {
-      bottom: 0;
-      transform: translatex(-50%);
+    .top-banner {
+      background: #F5F5F5;
     }
-  }
-  .pos-rel {
-    position: relative;
-  }
-  .pos-abs {
-    position: absolute;
-  }
-  .burger-menu-toggler {
-    left: 0;
-  }
+
+    .button-yellow {
+          background: yellow;
+      background-image: url('/cdn/shop/t/3/assets/button-arrow-black.svg');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+  .button-yellow:hover {
+          background: black;
+      background-image: url('/cdn/shop/t/3/assets/button-arrow-white.svg');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+    @media only screen and (max-width: 767px) {
+      .shopnow-btn {
+        bottom: 0;
+        transform: translatex(-50%);
+      }
+    }
+    .pos-rel {
+      position: relative;
+    }
+    .pos-abs {
+      position: absolute;
+    }
+    .burger-menu-toggler {
+      left: 0;
+    }
 </style>
