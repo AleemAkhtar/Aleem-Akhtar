@@ -178,18 +178,17 @@
 
 .product-variant-item-select {
   background: url("/cdn/shop/t/3/assets/select-option-down-arrow.svg") no-repeat
-    right 10px center;
+    right 16px center;
   height: 40px;
   border: 1px solid black;
   width: 100%;
   appearance: none;
   position: relative;
-  background-position: right 16px center;
 }
 
 .product-variant-item-open {
   background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
-    right 10px center;
+    right 16px center;
 }
 .product-variant-item .border-right {
   position: absolute;
