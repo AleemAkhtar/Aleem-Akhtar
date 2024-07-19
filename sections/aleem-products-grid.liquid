@@ -163,9 +163,9 @@
               return response.json();
             }
           }).then(response => {
-        console.log(response);
-          var added_product = response.items.find(item => item.variant_id== variant_id);
-          console.log(added_product);
+        console.log(added_product);
+          //var added_product = response.items.find(item => item.variant_id== variant_id);
+          //console.log(added_product);
         if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.include('M')){
           console.log('Soft Winter Jacket To be added here');
         }
