@@ -146,7 +146,9 @@
     close_popup.addEventListener('click', function(){
       popup.style.display = 'none';
     });
-
+    popup.addEventListener('click', function(){
+      popup.style.display = 'none';
+    });
     add_to_cart.addEventListener('click', function() {
       var variant_id = document.getElementById('selected-variant-id').innerText;
       fetch('/cart/add.js',{
