@@ -166,8 +166,26 @@
         console.log(added_product);
           //var added_product = response.items.find(item => item.variant_id== variant_id);
           //console.log(added_product);
-        if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('XS')){
+        if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('M')){
           console.log('Soft Winter Jacket To be added here');
+          fetch ('/products.json')
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+          }).then(response => {
+            const products = response.products;
+            if (products) {
+              console.log(products);
+              const soft_winter_jacket = products.find(products => product.title == 'Soft Winter Jacket');
+              if (soft_winter_jacket) {
+                console.log(soft_winter_jacket);
+              }
+              else {
+                console.log('not found');
+              }
+            }
+          });
         }
           popup.style.display="none";
 
