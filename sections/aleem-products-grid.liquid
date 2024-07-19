@@ -116,7 +116,7 @@
       link.addEventListener('click', function(e){
         e.preventDefault();
         var product_handle = this.closest('.product-grid__item').dataset.productHandle;
-        console.log(product_handle);
+        console.log('/products/' + product_handle+ '.js');
         fetch('/products/' + product_handle + '.js')
         .then(product => response.json())
         .then(product => {
