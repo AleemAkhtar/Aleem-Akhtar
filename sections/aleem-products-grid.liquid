@@ -312,7 +312,7 @@
             ul.innerHTML += li;
           });
 
-          ul.forEach(function(li){
+          ul.childNodes.forEach(function(li){
       li.addEventListener('click', function(e){
         e.preventDefault();
         li.classList.remove('selected-color');
