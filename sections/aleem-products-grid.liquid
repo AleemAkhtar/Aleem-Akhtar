@@ -70,6 +70,8 @@
       <div class="popup-content">
         <span class="close-popup">&times;</span>
         <h2 id="product-title"></h2>
+        <p id="selected-variant-id"></p>
+        <button id="popup-add-to-cart">Add to cart</button>
       </div>
     </div>
   </div>
@@ -86,18 +88,18 @@
     left:0;
     width:100%;
     height:100%;
-    background: #f5f5f5;
+    background-color:rgba(0,0,0,0.4);
     display:flex;
     z-index:1;
     overflow: auto;
   }
   .popup-content{
-    background: #FeFefe;
+    background: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
-    max-width: 600px;
+    max-width: 450px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -119,6 +121,7 @@
     var product_links = document.querySelectorAll('.product-grid__link');
     var popup = document.getElementById('product-popup');
     var close_popup = document.querySelector('.close-popup');
+    var add_to_cart = document.getElementById('popup-add-to-cart');
 
     product_links.forEach(function(link){
       link.addEventListener('click', function(e){
@@ -134,13 +137,35 @@
         .then(product => {
           console.log(product);
           document.getElementById('product-title').innerText = product.title;
-          popup.style.display="block";
+          document.getElementById('selected-variant-id').innerText = product.variants.first.id;
+          popup.style.display="flex";
+
         });
       });
     });
 
     close_popup.addEventListener('click', function(){
       popup.style.display = 'none';
+    });
+
+    add_to_cart.addEventListener('click', function() {
+      var variant_id = document.getElementById('selected-variant-id').innerText;
+      fetch('/cart/add.js',{
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({id: variant_id, quantity:1})
+      }).then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+          }).then(added_data => {
+          console.log(added_data);
+          popup.style.display="none";
+
+        });
+
     });
   });
 </script>
