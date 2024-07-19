@@ -204,8 +204,11 @@
     });
 
     var options = document.getElementById('product-sizes');
-    options.addEventListener('focus', function(){
+    options.addEventListener('mousedown', function(){
       options.classList.add('product-variant-item-open');
+    });
+    options.addEventListener('change', function(){
+      options.classList.remove('product-variant-item-open');
     });
     options.addEventListener('blur', function(){
       options.classList.remove('product-variant-item-open');
