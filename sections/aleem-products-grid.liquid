@@ -358,7 +358,7 @@
       var selected = variants.find(variant => variant.option1==selected_size && variant.option2==selected_color);
       console.log(selected);
       //if
-      var variant_id = document.getElementById('selected-variant-id').innerText;
+      var variant_id = selected.id;//document.getElementById('selected-variant-id').innerText;
       fetch('/cart/add.js',{
         method: 'POST',
         headers: {
