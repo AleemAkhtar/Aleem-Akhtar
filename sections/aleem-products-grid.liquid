@@ -313,11 +313,11 @@
           });
 
           ul.childNodes.forEach(function(li){
-      li.addEventListener('click', function(e){
-        e.preventDefault();
-          ul.childNodes.forEach((li) => li.classList.remove('selected-color'));
-        this.classList.add('selected-color');
-      })
+            li.addEventListener('click', function(e){
+              e.preventDefault();
+              document.getElementById('product-colors').childNodes.forEach((li) => li.classList.remove('selected-color'));
+              this.classList.add('selected-color');
+              });
           });
 
           // populating size variants
