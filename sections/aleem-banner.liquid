@@ -1,64 +1,64 @@
 {% schema %}
-  {
-    "name": "Aleem Banner",
-    "settings": [
-      {
-        "type": "text",
-        "id": "logo_headline",
-        "label": "Logo Headline",
-        "default": "TISSO VISON"
-      },
-      {
-        "type": "text",
-        "id": "logo_tagline",
-        "label": "Logo Tagline",
-        "default": "Find the ideal gift for your loved ones."
-      },
-      {
-        "type": "text",
-        "id": "button_text_top",
-        "label": "Button Text Top",
-        "default": "CHOOSE GIFT"
-      },
-      {
-        "type": "url",
-        "id": "button_url_top",
-        "label": "Button URL Top",
-        "default": "/"
-      }, {
-        "type": "text",
-        "id": "main_headline",
-        "label": "Main Headline",
-        "default": "THE GIFT GUIDE"
-      }, {
-        "type": "text",
-        "id": "main_tagline",
-        "label": "Main Tagline",
-        "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
-      }, {
-        "type": "text",
-        "id": "button_text_bottom",
-        "label": "Button Text Bottom",
-        "default": "SHOP NOW"
-      }, {
-        "type": "url",
-        "id": "button_url_bottom",
-        "label": "Button URL Bottom",
-        "default": "/"
-      }, {
-        "type": "text",
-        "id": "below_banner_text",
-        "label": "Below Banner Text",
-        "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Aleem Banner",
-        "category": "Customer Banner"
-      }
-    ]
-  }
+{
+  "name": "Aleem Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_headline",
+      "label": "Logo Headline",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline",
+      "label": "Logo Tagline",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "button_text_top",
+      "label": "Button Text Top",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "url",
+      "id": "button_url_top",
+      "label": "Button URL Top",
+      "default": "/"
+    }, {
+      "type": "text",
+      "id": "main_headline",
+      "label": "Main Headline",
+      "default": "THE GIFT GUIDE"
+    }, {
+      "type": "text",
+      "id": "main_tagline",
+      "label": "Main Tagline",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    }, {
+      "type": "text",
+      "id": "button_text_bottom",
+      "label": "Button Text Bottom",
+      "default": "SHOP NOW"
+    }, {
+      "type": "url",
+      "id": "button_url_bottom",
+      "label": "Button URL Bottom",
+      "default": "/"
+    }, {
+      "type": "text",
+      "id": "below_banner_text",
+      "label": "Below Banner Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aleem Banner",
+      "category": "Customer Banner"
+    }
+  ]
+}
 {% endschema %}
 
 <section class="section1">
@@ -77,6 +77,11 @@
               <div class="col-md-9">{{ section.settings.logo_tagline }}</div>
               <button class="col-md-3 text-center">
                 {{ section.settings.button_text_top }}
+                <img
+                  src="{{ 'button-arrow-black.svg' | asset_url | image_tag:'Button Arrow Right' }}"
+                  width="100%"
+                  height="100%"
+                >
               </button>
             </div>
           </div>
@@ -91,7 +96,8 @@
         src="{{ 'top-banner-img.png' | asset_url | image_tag:'Top Banner' }}"
         width="100%"
         height="100%"
-        alt="Top Banner">
+        alt="Top Banner"
+      >
     </div>
   </div>
 
@@ -106,7 +112,8 @@
         src="{{ 'bottom-banner-img.png' | asset_url | image_tag:'Bottom Banner' }}"
         width="100%"
         height="100%"
-        alt="Bottom Banner">
+        alt="Bottom Banner"
+      >
     </div>
   </div>
 
