@@ -1,40 +1,43 @@
 {% schema %}
-{
-  "name": "Aleem Products Grid",
-  "settings": [
-    {
-    "type": "product",
-    "id" : "product_1",
-    "label" : "Product 1"
-    },{
-    "type": "product",
-    "id" : "product_2",
-    "label" : "Product 2"
-    },{
-    "type": "product",
-    "id" : "product_3",
-    "label" : "Product 3"
-    },{
-    "type": "product",
-    "id" : "product_4",
-    "label" : "Product 4"
-    },{
-    "type": "product",
-    "id" : "product_5",
-    "label" : "Product 5"
-    },{
-    "type": "product",
-    "id" : "product_6",
-    "label" : "Product 6"
-    }
-  ],
-  "presets": [
-    {
-    "name" : "Aleem Products Grid",
-    "category" : "Custom Products Grid"
-    }
-  ]
-}
+  {
+    "name": "Aleem Products Grid",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_1",
+        "label": "Product 1"
+      },
+      {
+        "type": "product",
+        "id": "product_2",
+        "label": "Product 2"
+      },
+      {
+        "type": "product",
+        "id": "product_3",
+        "label": "Product 3"
+      },
+      {
+        "type": "product",
+        "id": "product_4",
+        "label": "Product 4"
+      }, {
+        "type": "product",
+        "id": "product_5",
+        "label": "Product 5"
+      }, {
+        "type": "product",
+        "id": "product_6",
+        "label": "Product 6"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aleem Products Grid",
+        "category": "Custom Products Grid"
+      }
+    ]
+  }
 {% endschema %}
 
 <section class="section2 mt-5">
@@ -58,23 +61,14 @@
                   src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
                   alt="{{ product.title }}"
                   width="100%"
-                  height="100%"
-                >
+                  height="100%">
               </a>
             </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
-    <!--
-      <div id="product-popup" style="display:none">
-        <div class="popup-content">
-          <span class="close-popup">&times;</span>
-          <h2 id="product-title"></h2>
-          <button id="popup-add-to-cart">Add to cart</button>
-        </div>
-      </div>
-    -->
+
 
     <!-- pop up design -->
 
@@ -85,7 +79,12 @@
         <div class="row">
           <div class="col-6">
             <div class="product-img">
-              <img id="product-img" src="" alt="" width="100%" height="100%">
+              <img
+                id="product-img"
+                src=""
+                alt=""
+                width="100%"
+                height="100%">
             </div>
           </div>
           <div class="col-6">
@@ -113,14 +112,20 @@
             <div class="row">
               <div class="col-12">
                 <div class="selection-group pos-rel">
-                  <select class="product-variant-item-select" name="" id="product-sizes"></select>
+                  <select
+                    class="product-variant-item-select"
+                    name=""
+                    id="product-sizes"></select>
                   <span class="border-right"></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <button id="popup-add-to-cart" class="add-to-cart-btn mt-4 custom-button button-black" type="button">
+        <button
+          id="popup-add-to-cart"
+          class="add-to-cart-btn mt-4 custom-button button-black"
+          type="button">
           ADD TO CART
         </button>
       </div>
@@ -128,8 +133,8 @@
   </div>
 </section>
 
-{% comment %}
-  START OF SCRIPT
+{% comment %} 
+  START OF SCRIPT 
 {% endcomment %}
 
 <script>
@@ -139,7 +144,7 @@
     var close_popup = document.querySelector('.close-popup');
     var add_to_cart = document.getElementById('popup-add-to-cart');
     var variants =[];
-
+  
     product_links.forEach(function(link){
       link.addEventListener('click', function(e){
         e.preventDefault();
@@ -160,14 +165,14 @@
           var tempDiv = document.createElement('div');
           tempDiv.innerHTML = product.description;
           document.getElementById('product-description').innerText = tempDiv.innerText;
-
+  
           variants = product.variants;
           // populating color variants
           var colors = product.options[1].values;
           var ul = document.getElementById('product-colors');
           ul.innerHTML = "";
           colors.forEach(function(color){
-
+  
             var li = '<li class="variant-color">';
                 li += '<input type="checkbox" name="color" style="background-color: '+color+';">';
                 li += '<span>'+color+'</span>';
@@ -176,7 +181,7 @@
             li += '<button>'+color+'</button></li>';
             ul.innerHTML += li;
           });
-
+  
           ul.childNodes.forEach(function(li){
             li.addEventListener('click', function(e){
               e.preventDefault();
@@ -184,7 +189,7 @@
               this.classList.add('selected-color');
               });
           });
-
+  
           // populating size variants
           var sizes = product.options[0].values;
           var options = document.getElementById('product-sizes');
@@ -194,15 +199,15 @@
             options.innerHTML += li;
           });
           popup.style.display="block";
-
+  
         });
       });
     });
-
+  
     close_popup.addEventListener('click', function(){
       popup.style.display = 'none';
     });
-
+  
     var options = document.getElementById('product-sizes');
     options.addEventListener('mousedown', function(){
       options.classList.add('product-variant-item-open');
@@ -213,7 +218,7 @@
     options.addEventListener('blur', function(){
       options.classList.remove('product-variant-item-open');
     });
-
+  
     add_to_cart.addEventListener('click', function() {
       var selected_size = document.getElementById('product-sizes').value;
       var selected_color = document.getElementsByClassName('selected-color')[0].childNodes[1].innerText;
@@ -266,7 +271,7 @@
                         }
                       });
                 }
-
+  
               }
               else {
                 console.log('not found');
@@ -275,9 +280,9 @@
           });
         }
           popup.style.display="none";
-
+  
         });
-
+  
     });
   });
 </script>
