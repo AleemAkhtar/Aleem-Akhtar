@@ -71,7 +71,6 @@
         <div class="popup-content">
           <span class="close-popup">&times;</span>
           <h2 id="product-title"></h2>
-          <p id="selected-variant-id"></p>
           <button id="popup-add-to-cart">Add to cart</button>
         </div>
       </div>
@@ -94,7 +93,6 @@
               <h3 id="product-title"></h3>
               <h2 id="product-price"></h2>
               <p id="product-description"></p>
-              <p id="selected-variant-id"></p>
             </div>
           </div>
         </div>
@@ -105,16 +103,7 @@
             <div class="row">
               <div class="col-12">
                 <div class="color">
-                  <ul id="product-colors">
-                    <li class="white">
-                      <input type="checkbox" name="color" style="background-color: #fff;">
-                      <span>White</span>
-                    </li>
-                    <li class="black">
-                      <input type="checkbox" name="color" style="background-color: #000;">
-                      <span>Black</span>
-                    </li>
-                  </ul>
+                  <ul id="product-colors"></ul>
                 </div>
               </div>
             </div>
@@ -124,11 +113,7 @@
             <div class="row">
               <div class="col-12">
                 <div class="selection-group pos-rel">
-                  <select name="" id="product-sizes">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
+                  <select name="" id="product-sizes"></select>
                   <span class="border-right"></span>
                 </div>
               </div>
@@ -305,7 +290,7 @@
           document.getElementById('product-title').innerText = product.title;
           document.getElementById('product-price').innerText = product.price;
           document.getElementById('product-img').src = product.featured_image;
-          document.getElementById('selected-variant-id').innerText = product.variants[0].id;
+          //document.getElementById('selected-variant-id').innerText = product.variants[0].id;
           var tempDiv = document.createElement('div');
           tempDiv.innerHTML = product.description;
           document.getElementById('product-description').innerText = tempDiv.innerText;
@@ -358,7 +343,7 @@
       var selected = variants.find(variant => variant.option1==selected_size && variant.option2==selected_color);
       console.log(selected);
       //if
-      var variant_id = selected.id;//document.getElementById('selected-variant-id').innerText;
+      var variant_id = selected.id;
       fetch('/cart/add.js',{
         method: 'POST',
         headers: {
@@ -373,7 +358,7 @@
           //console.log(added_product);
           //var added_product = response.items.find(item => item.variant_id== variant_id);
           //console.log(added_product);
-        if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('XS')){
+        if (added_product && added_product.variant_options.includes('Black') && added_product.variant_options.includes('M')){
           console.log('Soft Winter Jacket To be added here');
           fetch ('/products.json')
           .then(response => {
