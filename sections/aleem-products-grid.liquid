@@ -246,7 +246,7 @@
         margin-right: 12px;
       }
 
-      .selected-color button {
+      .color .selected-color button {
         color: #FFF;
         background: #000;
       }
@@ -321,7 +321,7 @@
                 li += '<input type="checkbox" name="color" style="background-color: '+color+';">';
                 li += '<span>'+color+'</span>';
                 li += '</li>';
-            li = '<li><span></span>';
+            li = '<li><span style="background-color: '+color+';"></span>';
             li += '<button>'+color+'</button></li>';
             ul.innerHTML += li;
           });
