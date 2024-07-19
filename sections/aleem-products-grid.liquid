@@ -127,7 +127,7 @@
       link.addEventListener('click', function(e){
         e.preventDefault();
         var product_handle = this.closest('.product-grid__item').dataset.productHandle;
-        console.log('/products/' + product_handle+ '.js');
+        //console.log('/products/' + product_handle+ '.js');
         fetch('/products/' + product_handle + '.js')
           .then(response => {
             if (response.ok) {
@@ -183,6 +183,21 @@
               const soft_winter_jacket = products.find(product => product.title == 'Soft Winter Jacket');
               if (soft_winter_jacket) {
                 console.log(soft_winter_jacket);
+                const medium_black_variant = soft_winter_jacket.variants.find(med => med.option1=='M' && med.option2=='Black')
+                if (medium_black_variant) {
+                  fetch('/cart/add.js',{
+                    method: 'POST',
+                    headers: {
+                      'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({id: variant_id, quantity:1})
+                  }).then(response => {
+                        if (response.ok) {
+                          console.log('Soft Winter Jacket Added.');
+                        }
+                      });
+                }
+
               }
               else {
                 console.log('not found');
