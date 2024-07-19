@@ -353,10 +353,10 @@
     });
 
     add_to_cart.addEventListener('click', function() {
+      console.log(variants);
       var selected_size = document.getElementById('product-sizes').value;
       var selected_color = document.getElementsByClassName('selected-color')[0].childNodes[1].innerText;
       var selected = variants.find(variant => variant.option1==selected_size && variant.option2==selected_color);
-      console.log(selected);
       //if
       var variant_id = document.getElementById('selected-variant-id').innerText;
       fetch('/cart/add.js',{
