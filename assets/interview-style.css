@@ -175,6 +175,11 @@
   color: #fff;
   background: #000;
 }
+
+.product-variant-item-open {
+  background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
+    right 10px center;
+}
 .product-variant-item select {
   background: url("/cdn/shop/t/3/assets/select-option-down-arrow.svg") no-repeat
     right 10px center;
@@ -184,10 +189,6 @@
   appearance: none;
   position: relative;
   background-position: right 16px center;
-}
-.product-variant-item-open select {
-  background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
-    right 10px center;
 }
 .product-variant-item .border-right {
   position: absolute;
