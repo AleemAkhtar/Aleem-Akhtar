@@ -90,10 +90,11 @@
             </div>
           </div>
           <div class="col-6">
-            <div class="product-description">
+            <div class="product-description" id="product-details">
               <h3 id="product-title"></h3>
               <h2 id="product-price"></h2>
               <p id="product-description"></p>
+              <p id="selected-variant-id"></p>
             </div>
           </div>
         </div>
@@ -301,9 +302,12 @@
           console.log(product);
           document.getElementById('product-title').innerText = product.title;
           document.getElementById('product-price').innerText = product.price;
-          document.getElementById('product-description').innerText = product.description;
           document.getElementById('product-img').src = product.featured_image;
           document.getElementById('selected-variant-id').innerText = product.variants[0].id;
+          var tempDiv = document.createElement('div');
+          tempDiv.innerHTML = product.description;
+
+          document.getElementById('product-description').innerText = tempDiv.innerText;
           popup.style.display="block";
 
         });
