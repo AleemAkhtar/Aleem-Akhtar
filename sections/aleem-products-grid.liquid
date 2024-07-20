@@ -162,7 +162,7 @@
         .then(product => {
           console.log(product);
           document.getElementById('product-title').innerText = product.title;
-          document.getElementById('product-price').innerText = product.price;
+          document.getElementById('product-price').innerHTML = product.price + "&euro;";
           document.getElementById('product-img').src = product.featured_image;
           //document.getElementById('selected-variant-id').innerText = product.variants[0].id;
           var tempDiv = document.createElement('div');
@@ -176,11 +176,8 @@
           ul.innerHTML = "";
           colors.forEach(function(color){
 
-            var li = '<li class="variant-color">';
-                li += '<input type="checkbox" name="color" style="background-color: '+color+';">';
-                li += '<span>'+color+'</span>';
-                li += '</li>';
-            li = '<li><span style="background-color: '+color+';"></span>';
+
+            var li = '<li><span style="background-color: '+color+';"></span>';
             li += '<button>'+color+'</button></li>';
             ul.innerHTML += li;
           });
