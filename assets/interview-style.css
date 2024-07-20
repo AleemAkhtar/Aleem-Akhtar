@@ -36,9 +36,12 @@
   background-color: yellow;
 }
 .button-yellow::after {
-  background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
+    background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
     10px center;
-  background-color: black;
+    background-color: black;
+    font-size: 16px;
+    line-height: 21px;
+    font-family: 'Jost';
 }
 .button-yellow:hover {
   color: white;
