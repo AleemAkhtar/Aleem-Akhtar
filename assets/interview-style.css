@@ -40,6 +40,7 @@
   font-size: 16px;
   line-height: 21px;
   font-family: 'Jost';
+  border: none;
 }
 .button-yellow::after {
     background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
