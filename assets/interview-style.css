@@ -268,4 +268,8 @@
     font-size: 30px;
     line-height: 30px;
   }
+  .section1 p {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }
