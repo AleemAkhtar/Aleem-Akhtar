@@ -14,6 +14,7 @@
   transition: color 0.3s ease;
   position: relative;
 }
+
 .custom-button::after {
   content: "";
   position: absolute;
@@ -25,68 +26,76 @@
   transition: clip-path 0.3s ease;
   z-index: -1;
 }
+
 .tagline {
   font-size: 16px;
   line-height: 14px;
   font-family: "Jost";
   color: black;
 }
+
 .custom-button:hover::after {
   clip-path: inset(0 0 0 0);
 }
+
 .button-yellow {
-  background: url(/cdn/shop/t/3/assets/button-arrow-black.svg) no-repeat right
-    10px center;
+  background: url(/cdn/shop/t/3/assets/button-arrow-black.svg) no-repeat right 10px center;
   background-color: yellow;
   font-size: 16px;
   line-height: 21px;
   font-family: "Jost";
   border: none;
 }
+
 .button-yellow::after {
-  background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
-    10px center;
+  background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right 10px center;
   background-color: black;
 }
+
 .button-yellow:hover {
   color: white;
 }
 
 .button-black {
   color: white;
-  background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
-    10px center;
+  background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right 10px center;
   background-color: black;
 }
+
 .button-black::after {
-  background: url(/cdn/shop/t/3/assets/button-arrow-black.svg) no-repeat right
-    10px center;
+  background: url(/cdn/shop/t/3/assets/button-arrow-black.svg) no-repeat right 10px center;
   background-color: yellow;
 }
+
 .button-black:hover {
   color: black;
 }
+
 .section1 h1 {
   font-size: 70px;
   line-height: 70px;
   font-weight: 500;
   font-family: "Jost";
 }
+
 .section1 p {
   font-size: 20px;
   line-height: 28px;
   font-weight: 400;
   font-family: "Jost";
 }
+
 .shopnow-btn {
   height: 50px;
   font-size: 16px;
   line-height: 21px;
   font-family: "Jost";
 }
+
 .belowbanner-txt {
   background: #f5f5f5;
 }
+
 .belowbanner-txt p {
   font-size: 14px;
   line-height: 16px;
@@ -97,12 +106,15 @@
 .pos-rel {
   position: relative;
 }
+
 .pos-abs {
   position: absolute;
 }
+
 .burger-menu-toggler {
   left: 0;
 }
+
 .burger-menu {
   display: block;
 }
@@ -112,6 +124,7 @@
   min-height: 444px;
   object-fit: cover;
 }
+
 #product-popup {
   position: fixed;
   top: 0;
@@ -123,6 +136,7 @@
   z-index: 1;
   overflow: auto;
 }
+
 .popup-content {
   background: #fefefe;
   margin: auto;
@@ -134,19 +148,23 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
 .close-popup {
   font-size: xx-large;
   cursor: pointer;
 }
+
 .product-img {
   max-height: 140px;
   height: 140px;
 }
+
 .product-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .section2 h2 {
   font-size: 36px;
   line-height: 44px;
@@ -154,18 +172,21 @@
   font-family: "Lustria";
   color: black;
 }
+
 .product-description h3 {
   font-family: "Jost";
   font-size: 16px;
   line-height: 20px;
   font-weight: 300;
 }
+
 .product-description h2 {
   font-family: "Lustria";
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
 }
+
 .product-description p {
   font-family: "Jost";
   font-style: normal;
@@ -175,12 +196,14 @@
   letter-spacing: -0.01em;
   color: #000000;
 }
+
 .product-variant-item h3 {
   font-family: "Jost";
   font-size: 14px;
   line-height: 19px;
   font-weight: 400;
 }
+
 .color ul {
   padding: 0;
   margin: 0;
@@ -188,6 +211,7 @@
   column-gap: 0;
   list-style-type: none;
 }
+
 .color li {
   height: 40px;
   padding: 0px;
@@ -201,18 +225,21 @@
   cursor: pointer;
   display: flex;
 }
+
 .color li span {
   display: block;
   width: 5px;
   background: yellow;
   border-right: 1px solid black;
 }
+
 .color li button {
   width: 100%;
   height: 100%;
   border: 0px;
   background: white;
 }
+
 .color li input {
   appearance: none;
   border-right: 1px solid black;
@@ -227,8 +254,7 @@
 }
 
 .product-variant-item-select {
-  background: url("/cdn/shop/t/3/assets/select-option-down-arrow.svg") no-repeat
-    right 16px center;
+  background: url("/cdn/shop/t/3/assets/select-option-down-arrow.svg") no-repeat right 16px center;
   height: 40px;
   border: 1px solid black;
   width: 100%;
@@ -244,9 +270,9 @@
 }
 
 .product-variant-item-open {
-  background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
-    right 16px center;
+  background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat right 16px center;
 }
+
 .product-variant-item .border-right {
   position: absolute;
   right: 50px;
@@ -264,6 +290,7 @@
   font-family: "Jost";
   font-weight: 400;
 }
+
 .section2 {
   margin: 50px 0px;
 }
@@ -280,44 +307,54 @@
     min-height: 250px;
     object-fit: cover;
   }
+
   .shopnow-btn {
     transform: unset;
     position: unset;
   }
+
   .section1 h1 {
     font-size: 30px;
     line-height: 30px;
   }
+
   .section1 p {
     font-size: 16px;
     line-height: 21px;
   }
+
   .belowbanner-txt p {
     font-size: 14px;
     line-height: 14px;
   }
+
   .section2 h2 {
     font-size: 24px;
     line-height: 28px;
   }
+
   .popup-content {
     width: 100%;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .product-grid__link img {
     min-height: 187px;
     object-fit: cover;
   }
+
   .shopnow-btn {
     position: absolute;
     bottom: 40px;
     transform: translatex(-50%);
   }
+
   .mobile-banner {
     object-fit: cover;
     height: 264px;
   }
+
   .top-banner-menu-open {
     box-shadow: 0px 9px 14px 1px #d5d5d5;
     background: white;
@@ -325,12 +362,15 @@
     padding-top: 15px;
     margin-top: -15px;
   }
+
   .button-yellow {
     border: 0px;
   }
+
   .burger-menu {
     display: none;
   }
+
   .burger-menu-toggler span {
     display: block;
     width: 20px;
