@@ -310,9 +310,9 @@
   .top-banner-menu-open {
     box-shadow: 0px 9px 14px 1px #d5d5d5;
     background: white;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: -10px;
+  padding-bottom: 15px;
+        padding-top: 15px;
+        margin-top: -15px;
   }
   .button-yellow {
     border: 0px;
