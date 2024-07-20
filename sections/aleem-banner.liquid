@@ -169,7 +169,10 @@
 </section>
 
 <script>
-
   var obj = document.querySelector('.burger-menu-toggler');
-  obj.addEventListener('click', function(e) {document.querySelector('.burger-menu').style.display = 'block';});
+    obj.addEventListener('click', function(e) {
+      document.querySelector('.burger-menu').style.display = 'block';
+      this.style.display = 'none';
+      document.querySelector('.icon-close').classList.remove('d-none');
+    });
 </script>
