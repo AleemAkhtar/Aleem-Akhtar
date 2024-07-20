@@ -139,6 +139,14 @@
 .product-img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+.section2 h2 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 400;
+  font-family: 'Lustria';
+  color: black;
 }
 .product-description h3 {
   font-family: "Jost";
@@ -248,11 +256,4 @@
 }
 .section2 {
   margin: 50px 0px;
-}
-.section2 h2 {
-  font-size: 36px;
-  line-height: 44px;
-  font-weight: 400;
-  font-family: 'Lustria';
-  color: black;
 }
