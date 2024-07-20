@@ -308,4 +308,9 @@
   .burger-menu {
     display: none;
   }
+  .burger-menu-toggler span {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
 }
