@@ -177,4 +177,9 @@
       document.getElementById('mobile-menu-close').classList.remove('d-none');
       this.classList.add('d-none');
     });
+    document.getElementById('mobile-menu-close').addEventListener('click', function(e) {
+      document.querySelector('.burger-menu').style.display = 'none';
+      document.getElementById('mobile-menu-close').classList.add('d-none');
+      this.classList.remove('d-none');
+    });
 </script>
