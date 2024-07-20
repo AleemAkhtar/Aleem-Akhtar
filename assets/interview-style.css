@@ -259,7 +259,10 @@
 .section2 {
   margin: 50px 0px;
 }
-@media only screen and (max-width: 767px) {
+
+
+
+@media only screen and (max-width: 991px) {
   .shopnow-btn {
     bottom: 10px;
     transform: translatex(-50%);
@@ -284,3 +287,4 @@
     width: 100%;
   }
 }
+
