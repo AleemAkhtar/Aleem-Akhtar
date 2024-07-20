@@ -21,6 +21,12 @@
   transition: clip-path 0.3s ease;
   z-index: -1;
 }
+.tagline {
+  font-size: 16px;
+  line-height: 14px;
+  font-family: 'Jost';
+  color: black;
+}
 .custom-button:hover::after {
   clip-path: inset(0 0 0 0);
 }
