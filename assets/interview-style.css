@@ -298,4 +298,7 @@
     bottom: 10px;
     transform: translatex(-50%);
   }
+  .button-yellow {
+    border: 0px;
+  }
 }
