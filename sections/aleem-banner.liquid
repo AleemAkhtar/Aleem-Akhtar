@@ -62,7 +62,7 @@
 {% endschema %}
 
 <section class="section1">
-  <div class="top-banner py-3">
+  <div class="top-banner py-3 mb-5 mb-md-0">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-3 col-lg-4">
@@ -99,7 +99,8 @@
   <div class="row pos-rel text-center text-md-start mx-0">
     <div class="col-md-5 offset-md-1 p-md-3 p-xl-5">
       <h1 class="mb-3 mb-md-4">{{ section.settings.main_headline }}</h1>
-      <p class="mb-3 mb-md-4">{{ section.settings.main_tagline }}</p>
+      <p class="mb-3 mb-md-4 d-none d-md-block">{{ section.settings.main_tagline }}</p>
+      <p class="mb-3 mb-md-4 d-md-none">Discover Joy: Your Ultimate Holiday Gift Destination.</p>
       <button class="pos-abs shopnow-btn custom-button button-black">{{ section.settings.button_text_bottom }}</button>
     </div>
     <div class="col-md-6 pr-0">
