@@ -110,6 +110,10 @@
 }
 
 /* Products Grid CSS */
+.product-grid__link img {
+    min-height: 444px;
+  object-fit: cover;
+}
 #product-popup {
   position: fixed;
   top: 0;
@@ -274,6 +278,10 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .product-grid__link img {
+    min-height: 250px;
+  object-fit: cover;
+}
   .shopnow-btn {
     transform: unset;
     position: unset;
@@ -299,6 +307,10 @@
   }
 }
 @media only screen and (max-width: 767px) {
+  .product-grid__link img {
+    min-height: 187px;
+  object-fit: cover;
+}
   .shopnow-btn {
     position: absolute;
     bottom: 40px;
