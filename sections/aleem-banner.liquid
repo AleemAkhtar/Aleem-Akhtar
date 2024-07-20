@@ -16,6 +16,12 @@
     },
     {
       "type": "text",
+      "id": "logo_tagline_mobile",
+      "label": "Logo Tagline Mobile",
+      "default": "Get started with your \"Mi Solo\" Kit"
+    },
+    {
+      "type": "text",
       "id": "button_text_top",
       "label": "Button Text Top",
       "default": "CHOOSE GIFT"
@@ -113,7 +119,12 @@
         <div class="col-md-9 col-lg-8">
           <div class="burger-menu py-5 py-md-0 text-center">
             <div class="row align-items-center">
-              <div class="col-md-7 col-xl-9 tagline mb-3 mb-md-0 text-start">{{ section.settings.logo_tagline }}</div>
+              <div class="col-md-7 col-xl-9 tagline mb-3 mb-md-0 text-start d-none d-md-block">
+                {{ section.settings.logo_tagline }}
+              </div>
+              <div class="col-md-7 col-xl-9 tagline mb-3 mb-md-0 text-start d-md-none">
+                {{ section.settings.logo_tagline_mobile }}
+              </div>
               <div class="col-md-5 col-xl-3 text-center text-md-end">
                 <button class="text-center custom-button button-yellow">
                   {{ section.settings.button_text_top }}
