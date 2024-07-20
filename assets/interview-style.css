@@ -6,6 +6,7 @@
 }
 
 .custom-button {
+  border: none;
   height: 44px;
   width: 220px;
   display: inline-block;
