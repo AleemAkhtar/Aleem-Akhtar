@@ -81,6 +81,28 @@ document.addEventListener("DOMContentLoaded", function () {
     options.classList.remove("product-variant-item-open");
   });
 
+  var obj = document.querySelector(".burger-menu-toggler");
+  document
+    .getElementById("mobile-menu-open")
+    .addEventListener("click", function (e) {
+      document.querySelector(".burger-menu").style.display = "block";
+      document.getElementById("mobile-menu-close").classList.remove("d-none");
+      document
+        .getElementById("top-banner-menu-toggler")
+        .classList.add("top-banner-menu-open");
+      this.classList.add("d-none");
+    });
+  document
+    .getElementById("mobile-menu-close")
+    .addEventListener("click", function (e) {
+      document.getElementById("mobile-menu-open").classList.remove("d-none");
+      this.classList.add("d-none");
+      document.querySelector(".burger-menu").style.display = "none";
+      document
+        .getElementById("top-banner-menu-toggler")
+        .classList.remove("top-banner-menu-open");
+    });
+
   add_to_cart.addEventListener("click", function () {
     var selected_size = document.getElementById("product-sizes").value;
     var selected_color =
