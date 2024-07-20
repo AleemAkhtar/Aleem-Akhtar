@@ -243,7 +243,10 @@
   color: black;
   letter-spacing: -2%;
 }
-
+.product-variant-item-select option:hover{
+  color: white;
+  background: black;
+}
 .product-variant-item-open {
   background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
     right 16px center;
