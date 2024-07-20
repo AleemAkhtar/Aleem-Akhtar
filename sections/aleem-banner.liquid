@@ -50,6 +50,11 @@
       "id": "below_banner_text",
       "label": "Below Banner Text",
       "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }, {
+      "type": "text",
+      "id": "below_banner_text_mobile",
+      "label": "Below Banner Text Mobile",
+      "default": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
     }
   ],
   "presets": [
@@ -163,7 +168,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <p class="text-center mb-0">{{ section.settings.below_banner_text }}</p>
+          <p class="text-center mb-0 d-none d-md-block">{{ section.settings.below_banner_text }}</p>
+          <p class="text-center mb-0 d-md-none">{{ section.settings.below_banner_text_mobile }}</p>
         </div>
       </div>
     </div>
