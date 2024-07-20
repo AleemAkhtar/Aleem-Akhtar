@@ -103,6 +103,9 @@
 .burger-menu-toggler {
   left: 0;
 }
+.burger-menu {
+  display: block;
+}
 
 /* Products Grid CSS */
 #product-popup {
@@ -301,5 +304,8 @@
   }
   .button-yellow {
     border: 0px;
+  }
+  .burger-menu {
+    display: none;
   }
 }
