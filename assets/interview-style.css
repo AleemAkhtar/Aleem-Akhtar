@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lustria&display=swap");
 
 .top-banner {
   background: #f5f5f5;
@@ -28,7 +28,7 @@
 .tagline {
   font-size: 16px;
   line-height: 14px;
-  font-family: 'Jost';
+  font-family: "Jost";
   color: black;
 }
 .custom-button:hover::after {
@@ -40,14 +40,13 @@
   background-color: yellow;
   font-size: 16px;
   line-height: 21px;
-  font-family: 'Jost';
+  font-family: "Jost";
   border: none;
 }
 .button-yellow::after {
-    background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
+  background: url(/cdn/shop/t/3/assets/button-arrow-white.svg) no-repeat right
     10px center;
-    background-color: black;
-    
+  background-color: black;
 }
 .button-yellow:hover {
   color: white;
@@ -71,27 +70,27 @@
   font-size: 70px;
   line-height: 70px;
   font-weight: 500;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 .section1 p {
   font-size: 20px;
   line-height: 28px;
   font-weight: 400;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 .shopnow-btn {
   height: 50px;
   font-size: 16px;
   line-height: 21px;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 .belowbanner-txt {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
-.belowbanner-txt p{
+.belowbanner-txt p {
   font-size: 14px;
   line-height: 16px;
-  font-family: 'Jost';
+  font-family: "Jost";
   padding: 10px 0px;
 }
 
@@ -110,7 +109,7 @@
 
 /* Products Grid CSS */
 .product-grid__link img {
-    min-height: 444px;
+  min-height: 444px;
   object-fit: cover;
 }
 #product-popup {
@@ -152,7 +151,7 @@
   font-size: 36px;
   line-height: 44px;
   font-weight: 400;
-  font-family: 'Lustria';
+  font-family: "Lustria";
   color: black;
 }
 .product-description h3 {
@@ -239,14 +238,11 @@
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
-  font-family: 'Jost';
+  font-family: "Jost";
   color: black;
   letter-spacing: -2%;
 }
-.product-variant-item-select option:hover{
-  color: white;
-  background: black;
-}
+
 .product-variant-item-open {
   background: url("/cdn/shop/t/3/assets/select-option-up-arrow.svg") no-repeat
     right 16px center;
@@ -265,7 +261,7 @@
   width: 100%;
   font-size: 16px;
   line-height: 21px;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-weight: 400;
 }
 .section2 {
@@ -282,8 +278,8 @@
 @media only screen and (max-width: 991px) {
   .product-grid__link img {
     min-height: 250px;
-  object-fit: cover;
-}
+    object-fit: cover;
+  }
   .shopnow-btn {
     transform: unset;
     position: unset;
@@ -311,23 +307,23 @@
 @media only screen and (max-width: 767px) {
   .product-grid__link img {
     min-height: 187px;
-  object-fit: cover;
-}
+    object-fit: cover;
+  }
   .shopnow-btn {
     position: absolute;
     bottom: 40px;
     transform: translatex(-50%);
   }
   .mobile-banner {
-        object-fit: cover;
+    object-fit: cover;
     height: 264px;
   }
   .top-banner-menu-open {
     box-shadow: 0px 9px 14px 1px #d5d5d5;
     background: white;
-  padding-bottom: 15px;
-        padding-top: 15px;
-        margin-top: -15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: -15px;
   }
   .button-yellow {
     border: 0px;
