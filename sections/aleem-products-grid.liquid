@@ -48,6 +48,7 @@
       </div>
     </div>
 
+    {% comment %} Products Grid Design {% endcomment %}
     <div class="row">
       {% for i in (1..6) %}
         {% assign product_id = 'product_' | append: i %}
@@ -69,8 +70,7 @@
       {% endfor %}
     </div>
 
-    <!-- pop up design -->
-
+    {% comment %} Popup Design {% endcomment %}
     <div id="product-popup" style="display:none">
       <div class="product-item-detail popup-content">
         <span class="close-popup text-end d-block">&times;</span>
