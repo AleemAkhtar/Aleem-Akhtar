@@ -122,7 +122,7 @@
     <div class="col-md-5 offset-md-1 p-md-3 p-xl-5">
       <h1 class="mb-3 mb-md-4">{{ section.settings.main_headline }}</h1>
       <p class="mb-3 mb-md-4 d-none d-md-block">{{ section.settings.main_tagline }}</p>
-      <p class="mb-3 mb-md-4 d-md-none">Discover Joy: Your Ultimate Holiday Gift Destination.</p>
+      <p class="mb-3 mb-md-4 d-md-none">{{ section.settings.main_tagline | truncatewords: 10 }}</p>
       <button class="shopnow-btn custom-button button-black mb-md-5">
         {{ section.settings.button_text_bottom }}
       </button>
