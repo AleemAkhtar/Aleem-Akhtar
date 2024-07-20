@@ -68,6 +68,12 @@
   font-weight: 500;
   font-family: 'Jost';
 }
+.section1 p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: 'Jost';
+}
 .shopnow-btn {
   height: 50px;
   font-size: 16px;
