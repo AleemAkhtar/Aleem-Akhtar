@@ -80,6 +80,15 @@
   line-height: 21px;
   font-family: 'Jost';
 }
+.belowbanner-txt {
+  background: #F5F5F5;
+}
+.belowbanner-txt p{
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'Jost';
+  padding: 10px 0px;
+}
 @media only screen and (max-width: 767px) {
   .shopnow-btn {
     bottom: 0;
