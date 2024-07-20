@@ -68,7 +68,7 @@
         <div class="col-md-3 col-lg-4">
           <div class="d-flex d-md-inline-block justify-content-center pos-rel">
             <div class="burger-menu-toggler d-md-none pos-abs">
-              <span>
+              <span id="mobile-menu-open">
                 <!-- Burger Menu -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +81,13 @@
                     <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor">
                   </path>
                 </svg>
+              </span>
+              <span id="mobile-menu-close" class="d-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                   focusable="false"
-                  class="icon icon-close d-none"
+                  class="icon icon-close"
                   fill="none"
                   viewBox="0 0 18 17"
                 >
@@ -169,10 +171,10 @@
 </section>
 
 <script>
-  var obj = document.querySelector('.icon-hamburger');
-    obj.addEventListener('click', function(e) {
+  var obj = document.querySelector('.burger-menu-toggler');
+    document.getElementById('mobile-menu-open').addEventListener('click', function(e) {
       document.querySelector('.burger-menu').style.display = 'block';
-      this.style.display = 'none';
-      document.querySelector('.icon-close').classList.remove('d-none');
+      document.getElementById('mobile-menu-close').classList.remove('d-none');
+      this.classList.add('d-none');
     });
 </script>
