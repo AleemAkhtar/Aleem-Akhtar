@@ -1,0 +1,193 @@
+{% schema %}
+{
+  "name": "Aleem Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_headline",
+      "label": "Logo Headline",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline",
+      "label": "Logo Tagline",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline_mobile",
+      "label": "Logo Tagline Mobile",
+      "default": "Get started with your \"Mi Solo\" Kit"
+    },
+    {
+      "type": "text",
+      "id": "button_text_top",
+      "label": "Button Text Top",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "url",
+      "id": "button_url_top",
+      "label": "Button URL Top",
+      "default": "/"
+    }, {
+      "type": "text",
+      "id": "main_headline",
+      "label": "Main Headline",
+      "default": "THE GIFT GUIDE"
+    }, {
+      "type": "text",
+      "id": "main_tagline",
+      "label": "Main Tagline",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    }, {
+      "type": "text",
+      "id": "button_text_bottom",
+      "label": "Button Text Bottom",
+      "default": "SHOP NOW"
+    }, {
+      "type": "url",
+      "id": "button_url_bottom",
+      "label": "Button URL Bottom",
+      "default": "/"
+    }, {
+      "type": "text",
+      "id": "below_banner_text",
+      "label": "Below Banner Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }, {
+      "type": "text",
+      "id": "below_banner_text_mobile",
+      "label": "Below Banner Text Mobile",
+      "default": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aleem Banner",
+      "category": "Customer Banner"
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %} START OF DESIGN {% endcomment %}
+<section class="section1">
+  <div class="top-banner py-4 mb-5 mb-md-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-lg-4" id="top-banner-menu-toggler">
+          <div class="d-flex d-md-inline-block justify-content-center pos-rel">
+            <div class="burger-menu-toggler d-md-none pos-abs">
+              <span id="mobile-menu-open">
+                <!-- Burger Menu -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                  class="icon icon-hamburger"
+                  fill="none"
+                  viewBox="0 0 18 16"
+                >
+                    <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor">
+                  </path>
+                </svg>
+              </span>
+              
+              <span id="mobile-menu-close" class="d-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                  class="icon icon-close"
+                  fill="none"
+                  viewBox="0 0 18 17"
+                >
+                    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+                  </path>
+                </svg>
+              </span>
+            </div>
+            <span class="logo"
+              ><img
+                src="{{ 'tisso-vison-logo.svg' | asset_url | image_tag:'TISSO VISON' }}"
+                width="100%"
+                height="100%"
+                alt="TISSO VISON"
+            ></span>
+          </div>
+        </div>
+        <div class="col-md-9 col-lg-8">
+          <div class="burger-menu py-5 py-md-0 text-center">
+            <div class="row align-items-center">
+              <div class="col-md-7 col-xl-9 tagline ps-xl-5 ps-md-3 ps-lg-4 mb-3 mb-md-0 text-start d-none d-md-block">
+                {{ section.settings.logo_tagline }}
+              </div>
+              <div class="col-md-7 col-xl-9 tagline mb-3 mb-md-0 text-center d-md-none">
+                {{ section.settings.logo_tagline_mobile }}
+              </div>
+              <div class="col-md-5 col-xl-3 text-center text-md-end">
+                <button class="text-center custom-button button-yellow">
+                  {{ section.settings.button_text_top }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} TOP BANNER {% endcomment %}
+  <div class="row d-md-block d-none mx-0">
+    <div class="col-12">
+      <img
+        src="{{ 'top-banner.svg' | asset_url | image_tag:'Top Banner' }}"
+        width="100%"
+        height="100%"
+        alt="Top Banner"
+      >
+    </div>
+  </div>
+
+  {% comment %} MAIN HEADLINE AND BOTTOM BANNER {% endcomment %}
+  <div class="row pos-rel text-center text-md-start mx-0">
+    <div class="col-md-5 offset-md-1 p-md-3 p-xl-5">
+      <h1 class="mb-3 mb-md-4">{{ section.settings.main_headline }}</h1>
+      <p class="mb-3 mb-md-4 d-none d-md-block">{{ section.settings.main_tagline }}</p>
+      <p class="mb-3 mb-md-4 d-md-none">{{ section.settings.main_tagline | truncatewords: 7, '' }}</p>
+      <button class="shopnow-btn custom-button button-black mb-md-5">
+        {{ section.settings.button_text_bottom }}
+      </button>
+    </div>
+    <div class="col-md-6 pr-0">
+      <img
+        class="d-none d-md-block"
+        src="{{ 'bottom-banner.svg' | asset_url | image_tag:'Bottom Banner' }}"
+        width="100%"
+        height="100%"
+        alt="Bottom Banner"
+      >
+      <img
+        class="d-md-none mobile-banner"
+        src="{{ 'bottom-banner-mobile.svg' | asset_url | image_tag:'Bottom Banner' }}"
+        width="100%"
+        height="100%"
+        alt="Bottom Banner"
+      >
+    </div>
+  </div>
+
+  {% comment %} TEXT BELOW BANNER {% endcomment %}
+  <div class="belowbanner-txt">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center mb-0 d-none d-md-block">{{ section.settings.below_banner_text }}</p>
+          <p class="text-center mb-0 d-md-none">{{ section.settings.below_banner_text_mobile }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

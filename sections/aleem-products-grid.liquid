@@ -1,0 +1,133 @@
+{% schema %}
+  {
+    "name": "Aleem Products Grid",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_1",
+        "label": "Product 1"
+      },
+      {
+        "type": "product",
+        "id": "product_2",
+        "label": "Product 2"
+      },
+      {
+        "type": "product",
+        "id": "product_3",
+        "label": "Product 3"
+      },
+      {
+        "type": "product",
+        "id": "product_4",
+        "label": "Product 4"
+      }, {
+        "type": "product",
+        "id": "product_5",
+        "label": "Product 5"
+      }, {
+        "type": "product",
+        "id": "product_6",
+        "label": "Product 6"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aleem Products Grid",
+        "category": "Custom Products Grid"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="section2">
+  <div class="container">
+    <div class="row text-center text-md-start mb-3">
+      <div class="col-12">
+        <h2>Tisso vison in the wild</h2>
+      </div>
+    </div>
+
+    {% comment %} Products Grid Design {% endcomment %}
+    <div class="row">
+      {% for i in (1..6) %}
+        {% assign product_id = 'product_' | append: i %}
+        {% assign product = section.settings[product_id] %}
+        {% if product %}
+          {% assign product = all_products[product] %}
+          <div class="col-6 col-md-4 p-1 p-md-2">
+            <div class="product-item pos-rel product-grid__item" data-product-handle="{{ product.handle }}">
+              <a href="#" class="product-grid__link">
+                <img
+                  src="{{  product.featured_image | remove_first: 'files/' | file_img_url:'large' }}"
+                  alt="{{ product.title }}"
+                  width="100%"
+                  height="100%">
+              </a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% comment %} Popup Design {% endcomment %}
+    <div id="product-popup" style="display:none">
+      <div class="product-item-detail popup-content">
+        <span class="close-popup text-end d-block">&times;</span>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="product-img">
+              <img
+                id="product-img"
+                src=""
+                alt=""
+                width="100%"
+                height="100%">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="product-description" id="product-details">
+              <h3 id="product-title"></h3>
+              <h2 id="product-price"></h2>
+              <p id="product-description"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-variants mt-3">
+          <div class="product-variant-item mb-3">
+            <h3 class="mb-2">Color</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="color">
+                  <ul id="product-colors"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-variant-item mb-3">
+            <h3 class="mb-2">Size</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="selection-group pos-rel">
+                  <select
+                    class="product-variant-item-select"
+                    name=""
+                    id="product-sizes"></select>
+                  <span class="border-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          id="popup-add-to-cart"
+          class="add-to-cart-btn mt-4 custom-button button-black"
+          type="button">
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
