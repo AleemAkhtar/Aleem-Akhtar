@@ -300,8 +300,12 @@
 @media only screen and (max-width: 767px) {
   .shopnow-btn {
     position: absolute;
-    bottom: 10px;
+    bottom: 40px;
     transform: translatex(-50%);
+  }
+  .mobile-banner {
+        object-fit: cover;
+    height: 264px;
   }
   .button-yellow {
     border: 0px;
