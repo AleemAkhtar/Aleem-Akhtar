@@ -264,8 +264,8 @@
 
 @media only screen and (max-width: 991px) {
   .shopnow-btn {
-    bottom: 10px;
-    transform: translatex(-50%);
+    transform: unset;
+    position: unset;
   }
   .section1 h1 {
     font-size: 30px;
@@ -287,4 +287,10 @@
     width: 100%;
   }
 }
-
+@media only screen and (max-width: 767px) {
+  .shopnow-btn {
+    position: absolute;
+    bottom: 10px;
+    transform: translatex(-50%);
+  }
+}
