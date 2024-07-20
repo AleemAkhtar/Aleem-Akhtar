@@ -253,6 +253,10 @@
   text-transform: uppercase;
   height: 40px;
   width: 100%;
+  font-size: 16px;
+  line-height: 21px;
+  font-family: 'Jost';
+  font-weight: 400;
 }
 .section2 {
   margin: 50px 0px;
